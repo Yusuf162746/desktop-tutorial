@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Interface Clone</title>
+    <style>
+        /* CSS STYLES */
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #DB4437;
+            --google-yellow: #F4B400;
+            --google-green: #0F9D58;
+            --gray-border: #dfe1e5;
+            --gray-text: #70757a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Navbar / Header */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 20px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: rgba(0,0,0,0.87);
+            font-size: 13px;
+        }
+
+        .btn-nav {
+            background: var(--google-blue);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 100px;
+        }
+
+        .hidden { display: none !important; }
+
+        /* HOME INTERFACE */
+        .logo {
+            font-size: 90px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            user-select: none;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 584px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 1px solid var(--gray-border);
+            border-radius: 24px;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+
+        .search-bar:hover, .search-bar:focus {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-gray {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            padding: 0 16px;
+            line-height: 34px;
+            height: 36px;
+            cursor: pointer;
+        }
+
+        /* REGISTRATION PAGE */
+        .reg-card {
+            width: 400px;
+            padding: 40px;
+            border: 1px solid var(--gray-border);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .reg-card h2 {
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid var(--gray-border);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .reg-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .link-blue {
+            color: var(--google-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" id="link-home">Gmail</a>
+        <a href="#">Images</a>
+        <button class="btn-nav" id="auth-btn" onclick="toggleView()">Sign In</button>
+    </header>
+
+    <main>
+        <div id="home-view" class="view">
+            <div class="logo">
+                <span style="color: #4285F4">G</span><span style="color: #EA4335">o</span><span style="color: #FBBC05">o</span><span style="color: #4285F4">g</span><span style="color: #34A853">l</span><span style="color: #EA4335">e</span>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search Google or type a URL">
+            </div>
+            <div class="button-group">
+                <button class="btn-gray">Google Search</button>
+                <button class="btn-gray">I'm Feeling Lucky</button>
+            </div>
+        </div>
+
+        <div id="reg-view" class="view hidden">
+            <div class="reg-card">
+                <div class="logo" style="font-size: 32px; margin-bottom: 10px;">
+                    <span style="color: #4285F4">G</span><span style="color: #EA4335">o</span><span style="color: #FBBC05">o</span><span style="color: #4285F4">g</span><span style="color: #34A853">l</span><span style="color: #EA4335">e</span>
+                </div>
+                <h2>Create Account</h2>
+                <p style="margin-bottom: 25px;">Enter your details to continue</p>
+                
+                <form id="registrationForm">
+                    <input type="text" placeholder="First Name" class="input-field" required>
+                    <input type="text" placeholder="Last Name" class="input-field" required>
+                    <input type="email" placeholder="Email Address" class="input-field" required>
+                    <input type="password" placeholder="Password" class="input-field" required>
+                    
+                    <div class="reg-footer">
+                        <span class="link-blue" onclick="toggleView()">Sign in instead</span>
+                        <button type="submit" class="btn-nav">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // JAVASCRIPT LOGIC
+        function toggleView() {
+            const homeView = document.getElementById('home-view');
+            const regView = document.getElementById('reg-view');
+            const authBtn = document.getElementById('auth-btn');
+
+            if (homeView.classList.contains('hidden')) {
+                // Switch to Home
+                homeView.classList.remove('hidden');
+                regView.classList.add('hidden');
+                authBtn.innerText = 'Sign In';
+            } else {
+                // Switch to Registration
+                homeView.classList.add('hidden');
+                regView.classList.remove('hidden');
+                authBtn.innerText = 'Back';
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Registration Successful! (Simulated)');
+            toggleView();
+        });
+    </script>
+</body>
+</html>
