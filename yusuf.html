@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yusuf Tuse | Information Science Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --main:#00b4d8;
+    --dark:#0b132b;
+    --light:#f8f9fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(120deg,#0b132b,#1c2541);
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+}
+
+nav h2{
+    color:var(--main);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:var(--main);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-card{
+    background:rgba(255,255,255,0.12);
+    padding:60px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    animation:fadeUp 1.5s ease;
+}
+
+.hero img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:4px solid var(--main);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero span{
+    color:var(--main);
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+.hero button{
+    margin-top:25px;
+    padding:12px 35px;
+    background:var(--main);
+    border:none;
+    border-radius:30px;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:2.5rem;
+    color:var(--main);
+}
+
+/* ABOUT */
+.about-box{
+    background:rgba(255,255,255,0.12);
+    padding:40px;
+    border-radius:15px;
+    line-height:1.8;
+}
+
+/* INFO GRID */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.info-card{
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:12px;
+}
+
+/* SKILLS */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+}
+
+.skill{
+    background:rgba(255,255,255,0.15);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.skill i{
+    font-size:2.5rem;
+    color:var(--main);
+    margin-bottom:15px;
+}
+
+/* PROJECTS */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.project{
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    border-radius:15px;
+    border-left:5px solid var(--main);
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    text-align:center;
+    padding:20px;
+    font-size:0.9rem;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav ul{display:none;}
+    .hero h1{font-size:2.2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h2>Yusuf Tuse</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-card">
+        <img src="C:\Users\Hp\OneDrive\Desktop\form.html\desktop-tutorial\yun.jpg" alt="Yusuf Tuse">
+        <h1>Yusuf <span>Tuse</span></h1>
+        <p>Information Science Student</p>
+        <p>Madda Walabu University</p>
+        <button onclick="location.href='#contact'">Contact Me</button>
+    </div>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about">
+<div class="title"><h2>About Me</h2></div>
+<div class="about-box">
+<p>
+My name is <strong>Yusuf Tuse</strong>. I am a <strong>3rd-year Information Science student</strong> at
+<strong>Madda Walabu University</strong>. My academic interests include information organization,
+information retrieval, database systems, web-based information systems, and information security.
+</p>
+
+<div class="info-grid">
+<div class="info-card"><strong>Department:</strong> Information Science</div>
+<div class="info-card"><strong>Year:</strong> 3rd Year</div>
+<div class="info-card"><strong>Email:</strong> yusufnike80@gmail.com</div>
+<div class="info-card"><strong>Country:</strong> Ethiopia</div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="title"><h2>Skills</h2></div>
+<div class="skills-grid">
+<div class="skill"><i class="fas fa-database"></i><h3>Database Systems</h3><p>SQL, MySQL</p></div>
+<div class="skill"><i class="fas fa-code"></i><h3>Web Development</h3><p>HTML, CSS, JavaScript</p></div>
+<div class="skill"><i class="fas fa-search"></i><h3>Information Retrieval</h3><p>Indexing & Search</p></div>
+<div class="skill"><i class="fas fa-shield-alt"></i><h3>Information Security</h3><p>Data Protection</p></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="title"><h2>Academic Projects</h2></div>
+<div class="projects-grid">
+
+<div class="project">
+<h3>Library Information Management System</h3>
+<p>Database-based system for managing library resources and users.</p>
+</div>
+
+<div class="project">
+<h3>Student Information System</h3>
+<p>Web-based platform for student academic records.</p>
+</div>
+
+<div class="project">
+<h3>Information Retrieval Study</h3>
+<p>Research on indexing techniques and search efficiency.</p>
+</div>
+
+<div class="project">
+<h3>Information Security Analysis</h3>
+<p>Study on access control and data protection.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="title"><h2>Contact</h2></div>
+<p><i class="fas fa-envelope"></i> yusufnike80@gmail.com</p>
+<p><i class="fas fa-university"></i> Madda Walabu University</p>
+<p><i class="fas fa-map-marker-alt"></i> Ethiopia</p>
+</section>
+
+<footer>
+© 2024 Yusuf Tuse | Information Science Department
+</footer>
+
+</body>
+</html>
+ 
